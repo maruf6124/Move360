@@ -1,0 +1,15 @@
+# Secret files
+.env
+.env.*
+!.env.example
+
+# Python environment
+.venv/
+__pycache__/
+*.pyc
+
+# Test files
+backend/test_smtp.py
+
+# Database backups
+*.sql

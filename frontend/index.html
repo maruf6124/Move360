@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="bn">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Move360 — Find your place
+  </title>
+  <link href="css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header>
+   <div class="nav">
+    <div class="logo">
+     Move
+     <span>
+      360
+     </span>
+    </div>
+    <div class="navlinks">
+     <button class="plain" onclick="home()">
+      Home
+     </button>
+     <button class="plain" onclick="showHouses()">
+      Find Homes
+     </button>
+     <button class="ghost" onclick="openPost()">
+      + New Post
+     </button>
+     <span id="authNav">
+     </span>
+    </div>
+   </div>
+  </header>
+  <main class="wrap">
+   <section id="landing">
+    <div class="hero">
+     <div>
+      <div style="color:#bbf7e8;font-weight:700;margin-bottom:12px">
+       SMART RENTAL &amp; RELOCATION PLATFORM
+      </div>
+      <h1>
+       Find your next home,
+       <br/>
+       without the hassle.
+      </h1>
+      <p>
+       ঢাকায় বাসা খোঁজা, মুভিং সার্ভিস এবং নতুন-পুরোনো আসবাবের জন্য একটি স্মার্ট প্ল্যাটফর্ম।
+      </p>
+      <button onclick="showHouses()" style="background:#fff;color:#087f72">
+       Explore Houses →
+      </button>
+     </div>
+     <div class="hero-art">
+      🏡
+     </div>
+    </div>
+    <div class="sectionhead">
+     <h2>
+      Explore our services
+     </h2>
+     <span class="muted">
+      One platform, many solutions
+     </span>
+    </div>
+    <div class="services">
+     <div class="service" onclick="showHouses()">
+      <div class="emoji">
+       🏠
+      </div>
+      <h3>
+       Find a House
+      </h3>
+      <p>
+       Budget, area এবং room অনুযায়ী বাসা খুঁজুন।
+      </p>
+      <span class="tag">
+       Available now →
+      </span>
+     </div>
+     <div class="service" onclick="coming('Truck &amp; Pickup Rental')">
+      <div class="emoji">
+       🚚
+      </div>
+      <h3>
+       Truck &amp; Pickup Rental
+      </h3>
+      <p>
+       বাসা বদলের জন্য পরিবহন খুঁজুন।
+      </p>
+      <span class="tag soon">
+       Coming soon
+      </span>
+     </div>
+     <div class="service" onclick="coming('Furniture Marketplace')">
+      <div class="emoji">
+       🛋️
+      </div>
+      <h3>
+       Furniture Marketplace
+      </h3>
+      <p>
+       নতুন-পুরোনো জিনিস কেনা-বেচা করুন।
+      </p>
+      <span class="tag soon">
+       Coming soon
+      </span>
+     </div>
+    </div>
+    <div class="sectionhead">
+     <h2>
+      Featured Homes
+     </h2>
+     <button class="ghost" onclick="showHouses()">
+      See all →
+     </button>
+    </div>
+    <div class="cards" id="featured">
+    </div>
+   </section>
+   <section class="hidden" id="listPage">
+    <div class="sectionhead">
+     <div>
+      <h2>
+       Find your perfect home
+      </h2>
+      <p class="muted">
+       Search, compare and explore available homes in Dhaka.
+      </p>
+     </div>
+     <button onclick="openPost()">
+      + New Post
+     </button>
+    </div>
+    <div id="personalNotice">
+    </div>
+    <div class="filters">
+     <input id="q" oninput="renderList()" placeholder="Area / location"/>
+     <select id="budget" onchange="renderList()">
+      <option value="">
+       Any budget
+      </option>
+      <option value="12000">
+       Under ৳12,000
+      </option>
+      <option value="20000">
+       Under ৳20,000
+      </option>
+      <option value="30000">
+       Under ৳30,000
+      </option>
+      <option value="50000">
+       Under ৳50,000
+      </option>
+     </select>
+     <select id="rooms" onchange="renderList()">
+      <option value="">
+       Any rooms
+      </option>
+      <option value="1">
+       1+ bedroom
+      </option>
+      <option value="2">
+       2+ bedrooms
+      </option>
+      <option value="3">
+       3+ bedrooms
+      </option>
+      <option value="4">
+       4+ bedrooms
+      </option>
+     </select>
+     <select id="sort" onchange="renderList()">
+      <option value="match">
+       Best match
+      </option>
+      <option value="low">
+       Lowest rent
+      </option>
+      <option value="high">
+       Highest rent
+      </option>
+     </select>
+     <button class="secondarybtn" onclick="resetFilters()">
+      Reset
+     </button>
+    </div>
+    <p class="muted" id="count">
+    </p>
+    <div class="cards" id="list">
+    </div>
+   </section>
+   <section class="hidden" id="dashPage">
+    <div class="sectionhead">
+     <h2>
+      My Dashboard
+     </h2>
+     <button onclick="openPost()">
+      + New Post
+     </button>
+    </div>
+    <div id="dashboard">
+    </div>
+   </section>
+  </main>
+  <footer class="footer">
+   Move360 · Evaluation 1 Frontend Prototype · Data stored locally in this browser
+  </footer>
+  <div class="overlay hidden" id="overlay" onclick="if(event.target===this)closeModal()">
+   <div class="modal" id="modal">
+   </div>
+  </div>
+  <script src="js/app.js">
+  </script>
+ </body>
+</html>
+
